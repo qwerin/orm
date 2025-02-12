@@ -328,11 +328,6 @@ class DbalCollection implements ICollection
 			$join->applyJoin($this->queryBuilder);
 		}
 
-		if (count($groupBy) > 0) {
-			foreach ($this->ordering as [$expression]) {
-				$groupBy = array_merge($groupBy, $expression->columns);
-			}
-		}
 		$this->ordering = [];
 
 		if (count($groupBy) > 0) {
